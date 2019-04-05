@@ -1,0 +1,29 @@
+# description	: Hardware lister application
+# homepage	: https://www.ezix.org/project/wiki/HardwareLiSter
+# maintainer	: Zar Marco, fioretti.marco83 at gmail.com
+# depends : gcc gtk2  sqlite 
+
+
+
+name=lshw
+version=B.02.18
+release=1
+source=(http://ezix.org/software/files/lshw-${version}.tar.gz)
+md5sum=(8671c6d94d6324a744b7f21f1bfecfd2)
+
+build() {
+	cd $name-$version
+
+
+	mkdir -p $PKG/usr/bin
+	mkdir -p $PKG/usr/share/man/man1
+ make SBINDIR=/usr/bin
+  make SBINDIR=/usr/bin gui
+
+  make DESTDIR="$pkgdir"/ SBINDIR=/usr/bin install
+  make DESTDIR="$pkgdir"/ SBINDIR=/usr/bin install-gui
+  install -Dm0644 src/gui/integration/gtk-lshw.desktop "$pkgdir"/usr/share/applications/gtk-lshw.desktop
+  install -Dm0644 src/gui/integration/gtk-lshw.pam "$pkgdir"/usr/share/doc/$pkgname/gtk-lshw.pam
+  install -Dm0644 src/gui/integration/console.apps "$pkgdir"/usr/share/doc/$pkgname/console.apps
+  rm -f "$pkgdir"/usr/share/lshw/{pci,usb}.ids
+  }

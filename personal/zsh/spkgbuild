@@ -1,0 +1,27 @@
+# description	: Z shell
+# homepage	: http://www.zsh.org/
+# maintainer	: fioretti.marco83 at gmail.com
+# depends	: ncurses groff gdbm libcap pcre
+
+name=zsh
+version=5.7.1
+release=1
+source=(https://sourceforge.net/projects/zsh/files/$name-$version.tar.xz)
+md5sum=(374f9fdd121b5b90e07abfcad7df0627)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+	            --without-bash-malloc \
+	            --with-installed-readline \
+		    --disable-nls
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -p $PKG/bin
+	mv $PKG/usr/bin/zsh $PKG/bin
+#	ln -s zsh $PKG/bin/sh
+
+#	rm -fr $PKG/usr/share/{doc,info}
+}
