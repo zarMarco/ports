@@ -1,0 +1,20 @@
+# description	: Tools for helping translation of documentation
+# homepage	: https://po4a.org/
+# maintainer	: Zar Marco, marco.fioretti83 at gmail.com
+# depends : gettext perl docbook-xsl perl-locale-gettext perl-module-build perl-sgmls perl-term-readkey perl-text-wrapi18n perl-unicode-linebreak
+
+
+
+name=po4a
+version=0.55
+release=1
+source=($name-$version.tar.gz::https://github.com/mquinson/$name/archive/v$version.tar.gz)
+md5sum=(cecc2a4190f97bf0430d78a5cb07071b)
+
+build() {
+	cd $name-$version
+perl Build.PL installdirs=vendor create_packlist=0
+  # The script expects a UTF-8 locale
+  LC_ALL=en_US.UTF-8 perl Build
+
+  }
