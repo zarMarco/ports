@@ -9,7 +9,7 @@ name=tilix
 version=1.9.0
 release=2
 source=("https://github.com/gnunn1/tilix/archive/$version/$name-$version.tar.gz")
-md5sum=(4c63959c63fcd0b0b2eab9b648f60dca)
+md5sum=(ef2a39d9e0a43cf356c6351a184336c7)
 
 build() {
 	cd $name-$version
