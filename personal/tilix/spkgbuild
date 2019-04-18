@@ -1,0 +1,23 @@
+# description	: A tiling terminal emulator for Linux using GTK+ 3
+# homepage	: https://github.com/gnunn1/tilix
+# maintainer	: Zar Marco, marco.fioretti83 at gmail.com
+# depends : dconf gsettings-desktop-schemas gtkd libx11 vte3 ldc po4a 
+
+
+
+name=tilix
+version=1.9.0
+release=2
+source=("https://github.com/gnunn1/tilix/archive/$version/$name-$version.tar.gz")
+md5sum=(4c63959c63fcd0b0b2eab9b648f60dca)
+
+build() {
+	cd $name-$version
+
+        ./configure \
+         --prefix=/usr \
+    	 PO4A_TRANS=/usr/bin/vendor_perl/po4a-translate \
+    	 DC='ldmd' \
+    	 DCFLAGS='-O -inline -release -version=StdLoggerDisableTrace -L='"\"$LDFLAGS\""
+    	 make
+  }

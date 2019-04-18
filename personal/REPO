@@ -1,7 +1,9 @@
-d:zsh
 d:bumblebee
 d:lshw
-f:b5835bb787717ce3a350e0d8a3ffcd13:zsh/spkgbuild
-f:60ca34f07eca34f07a2e79419c5cee52:zsh/spkgbuild.bak
+d:zsh
+d:tilix
 f:5722bd87e7f555dae36e38ffc7e274d6:bumblebee/spkgbuild
 f:70879ac889b42983bfe203f0fd9dcedb:lshw/spkgbuild
+f:b5835bb787717ce3a350e0d8a3ffcd13:zsh/spkgbuild
+f:60ca34f07eca34f07a2e79419c5cee52:zsh/spkgbuild.bak
+f:454c8b8ecf29361e1f347f55ac11e741:tilix/spkgbuild
