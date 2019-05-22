@@ -1,9 +1,8 @@
 d:lshw
 d:zsh
-d:tilix
-d:linux
+d:linux-5
 f:70879ac889b42983bfe203f0fd9dcedb:lshw/spkgbuild
 f:b5835bb787717ce3a350e0d8a3ffcd13:zsh/spkgbuild
 f:60ca34f07eca34f07a2e79419c5cee52:zsh/spkgbuild.bak
-f:46178f4a2ceb0815496612a1e339579a:tilix/spkgbuild
-f:aba4934eb27c8f45398d24f4e2dfef3b:linux/spkgbuild
+f:05eb8900e9f2533d5496ec4f4e32c31c:linux-5/install
+f:aba4934eb27c8f45398d24f4e2dfef3b:linux-5/spkgbuild
